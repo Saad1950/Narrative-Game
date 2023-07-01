@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class PhoneController : MonoBehaviour
@@ -10,6 +11,12 @@ public class PhoneController : MonoBehaviour
     Rigidbody2D[] rbMessages;
     private const float speedMultiplier = 100f;
     Vector2 input;
+
+    //Lerp variables
+    [SerializeField] private AnimationCurve curve;
+    float current = 0f, target = 1f;
+    float lerpSpeed = 1f;
+
 
 	private void Start()
 	{
@@ -40,22 +47,36 @@ public class PhoneController : MonoBehaviour
 
         float scrollValue = 0f;
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if(Input.GetKey(KeyCode.DownArrow))
         {
-            scrollValue = -1f;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            scrollValue = 1f;
+            scrollValue = LerpValue(scrollValue, false);
         }
         else
         {
-            scrollValue = 0f;
+            scrollValue = LerpValue(scrollValue, true);
         }
 
-        input = new Vector2(0f, scrollValue);
+        input = new Vector2(0f, scrollValue) ;
 
     }
+
+    float LerpValue(float value, bool down)
+    {
+        if(down == false)
+		{
+			current = Mathf.MoveTowards(current, target, lerpSpeed * Time.deltaTime);
+			value = Mathf.Lerp(value, -1f, curve.Evaluate(current));
+
+		}
+        else
+        {
+			current = Mathf.MoveTowards(current, target, lerpSpeed * Time.deltaTime);
+			value = Mathf.Lerp(value, 0f, curve.Evaluate(current));
+		}
+
+        return value;
+    }
+
     private void ScrollDown()
     {
         //Applies an upward or downwards force based on the input

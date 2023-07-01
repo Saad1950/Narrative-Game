@@ -153,7 +153,7 @@ Transform:
   m_Children:
   - {fileID: 1356334974}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &269687735
 GameObject:
@@ -637,7 +637,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_LightType: 4
+  m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1389,12 +1389,12 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_PointLightInnerAngle: 255.80319
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 4.96
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -1418,7 +1418,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &633989236
 GameObject:
@@ -2083,7 +2083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209003886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.168493, y: 32.482414, z: 0}
+  m_LocalPosition: {x: -18.168493, y: 34.5, z: 0}
   m_LocalScale: {x: 20.196144, y: 4.327746, z: 14.425816}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2547,7 +2547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451546083}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9226265, y: 40.061646, z: 0}
+  m_LocalPosition: {x: 5.9226265, y: 42.07923, z: 0}
   m_LocalScale: {x: 20.196144, y: 4.327746, z: 14.425817}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2976,7 +2976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545619316}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9226265, y: 53.595985, z: 0}
+  m_LocalPosition: {x: 5.9226265, y: 56.37923, z: 0}
   m_LocalScale: {x: 20.196144, y: 4.327746, z: 14.425817}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3166,7 +3166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697507068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.168493, y: 46.016754, z: 0}
+  m_LocalPosition: {x: -18.168493, y: 48.8, z: 0}
   m_LocalScale: {x: 20.196144, y: 4.327746, z: 14.425816}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3314,7 +3314,7 @@ GameObject:
   - component: {fileID: 1761037756}
   - component: {fileID: 1761037755}
   m_Layer: 0
-  m_Name: Virus
+  m_Name: TextPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3380,13 +3380,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761037749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.11, y: -1.07, z: 0}
+  m_LocalPosition: {x: -1.11, y: -0.612, z: 0}
   m_LocalScale: {x: 0.47278473, y: 0.47278473, z: 0.47278473}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1597888275}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1761037752
 BoxCollider2D:
@@ -3620,6 +3620,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollingSpeed: 1
   messageHolder: {fileID: 1932047144}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1962811870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,7 +3969,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003187376168532930
 GameObject:
@@ -4272,7 +4296,7 @@ Transform:
   - {fileID: 8686385305752594701}
   - {fileID: 3879840553054411739}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8393176391298877150
 SpriteRenderer:
