@@ -7,6 +7,7 @@ public class PhoneController : MonoBehaviour
 {
     [SerializeField] private float scrollingSpeed;
     [SerializeField] GameObject messageHolder;
+    [SerializeField] Transform phoneEdgeTransform;
 
     Rigidbody2D[] rbMessages;
     private const float speedMultiplier = 100f;
@@ -34,12 +35,35 @@ public class PhoneController : MonoBehaviour
 	private void Update()
     {
         GetInput();
+        CheckIfMessagesLeft();
     }
 
 	private void FixedUpdate()
 	{
         ScrollDown();
 	}
+
+    private void CheckIfMessagesLeft()
+    {
+        foreach(var rb in rbMessages)
+        {
+			SpriteRenderer spriteRenderer = rb.GetComponent<SpriteRenderer>();
+			float spriteHalfHeight = spriteRenderer.size.y / 2f;
+
+			if (rb.transform.position.y <= phoneEdgeTransform.position.y + spriteHalfHeight)
+            {
+
+                rb.gameObject.SetActive(false);
+
+
+            }
+            else
+            {
+				rb.gameObject.SetActive(true);
+
+			}
+		}
+    }
 
     private void GetInput()
     {
