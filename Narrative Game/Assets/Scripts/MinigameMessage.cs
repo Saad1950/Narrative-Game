@@ -8,6 +8,8 @@ public class MinigameMessage : MonoBehaviour
 	[SerializeField] private CustomScene[] customScenes;
 
 	SpriteRenderer spriteRenderer;
+	int chosenValue;
+
 	bool canEnter;
 
 	private void Start()
@@ -34,7 +36,11 @@ public class MinigameMessage : MonoBehaviour
 	void EnterMinigame()
 	{
 		MessageTracker.instance.SaveMessagesPos();
-		SceneManager.LoadScene(customScenes[Random.Range(0, customScenes.Length)].buildIndex);
+
+		int randomIndex = Random.Range(0, customScenes.Length);
+		chosenValue = randomIndex;
+
+		SceneManager.LoadScene(customScenes[randomIndex].buildIndex);
 
 	}
 }

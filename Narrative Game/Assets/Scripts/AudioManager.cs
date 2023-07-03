@@ -125,7 +125,7 @@ public class AudioManager : MonoBehaviour
 		{
 			foreach (EventInstance e in eventInstances)
 			{
-				e.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+				e.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 				e.release();
 			}
 		}
