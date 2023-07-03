@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
+using TMPro;
 using UnityEngine;
 
 public class PhoneController : MonoBehaviour
@@ -9,17 +9,12 @@ public class PhoneController : MonoBehaviour
     [SerializeField] GameObject messageHolder;
     [SerializeField] Transform phoneEdgeTransform;
 
-    Rigidbody2D[] rbMessages;
+    [HideInInspector] public Rigidbody2D[] rbMessages;
     private const float speedMultiplier = 100f;
     Vector2 input;
 
-    //Lerp variables
-    [SerializeField] private AnimationCurve curve;
-    float current = 0f, target = 1f;
-    float lerpSpeed = 1f;
 
-
-	private void Start()
+	private void Awake()
 	{
         //Gets the rigidbodies of the messages and turns off their gravity and freezes rotation among other things
         rbMessages = messageHolder.GetComponentsInChildren<Rigidbody2D>();
@@ -48,18 +43,25 @@ public class PhoneController : MonoBehaviour
         foreach(var rb in rbMessages)
         {
 			SpriteRenderer spriteRenderer = rb.GetComponent<SpriteRenderer>();
-			float spriteHalfHeight = spriteRenderer.size.y / 2f;
+            TextMeshProUGUI text = rb.GetComponentInChildren<TextMeshProUGUI>();
 
-			if (rb.transform.position.y <= phoneEdgeTransform.position.y + spriteHalfHeight)
+			float spriteHalfHeight = spriteRenderer.size.y / 2f;
+            float lowerEdgeYPos = phoneEdgeTransform.position.y + spriteHalfHeight;
+
+			if (rb.transform.position.y <= lowerEdgeYPos)
             {
 
-                rb.gameObject.SetActive(false);
+                spriteRenderer.enabled = false;
+                text.enabled = false;
 
 
             }
-            else
+            else 
             {
-				rb.gameObject.SetActive(true);
+				spriteRenderer.enabled = true;
+                text.enabled = true;
+
+
 
 			}
 		}
@@ -69,36 +71,23 @@ public class PhoneController : MonoBehaviour
     {
         //Gets the input based on the up and down arrows
 
-        float scrollValue = 0f;
+        float scrollValue = -1f;
 
-        if(Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            scrollValue = LerpValue(scrollValue, false);
+            //scrollValue = -1f;
+        }
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            //scrollValue = 1f;
         }
         else
         {
-            scrollValue = LerpValue(scrollValue, true);
+            //scrollValue = 0f;
         }
 
-        input = new Vector2(0f, scrollValue) ;
+        input = new Vector2(0f, scrollValue);
 
-    }
-
-    float LerpValue(float value, bool down)
-    {
-        if(down == false)
-		{
-			current = Mathf.MoveTowards(current, target, lerpSpeed * Time.deltaTime);
-			value = Mathf.Lerp(value, -1f, curve.Evaluate(current));
-
-		}
-        else
-        {
-			current = Mathf.MoveTowards(current, target, lerpSpeed * Time.deltaTime);
-			value = Mathf.Lerp(value, 0f, curve.Evaluate(current));
-		}
-
-        return value;
     }
 
     private void ScrollDown()
@@ -109,4 +98,20 @@ public class PhoneController : MonoBehaviour
             rb.velocity = input * scrollingSpeed * Time.deltaTime * speedMultiplier;
         }
     }
+
+	public IEnumerator ScrollDown(float scrollValue)
+	{
+        Vector2 automaticInput = new Vector2(input.x, scrollValue);
+
+		while(true)
+        {
+			foreach (Rigidbody2D rb in rbMessages)
+			{
+				rb.velocity = automaticInput * scrollingSpeed * Time.deltaTime * speedMultiplier;
+			}
+            yield return null;
+		}
+
+
+	}
 }

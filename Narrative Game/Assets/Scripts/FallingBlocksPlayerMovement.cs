@@ -7,7 +7,7 @@ public class FallingBlocksPlayerMovement : MonoBehaviour
 	[SerializeField] private Transform leftBorder, rightBorder;
 	float leftBorderBoundry, rightBorderBoundry;
 
-	[SerializeField] private float speed = 7f;
+	[SerializeField] private float movementSpeed = 7f;
 
 	// Start is called before the first frame update
 	void Start()
@@ -22,7 +22,7 @@ public class FallingBlocksPlayerMovement : MonoBehaviour
 	{
 		#region Movement Calculation
 		float inputXKeyboard = Input.GetAxisRaw("Horizontal");
-		float velocity = inputXKeyboard * speed;
+		float velocity = inputXKeyboard * movementSpeed;
 		transform.Translate(Vector2.right * velocity * Time.deltaTime);
 
 		if (transform.position.x > rightBorderBoundry)
@@ -37,17 +37,5 @@ public class FallingBlocksPlayerMovement : MonoBehaviour
 
 	}
 
-	bool IsNegative(float value)
-	{
-		if (value >= 0)
-		{
-			return false;
-		}
-		else if (value <= 0)
-		{
-			return true;
-		}
-		return true;
-	}
 
 }
