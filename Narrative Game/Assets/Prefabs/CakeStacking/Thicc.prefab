@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7045610973818013833}
   - component: {fileID: 3646510612400082102}
   - component: {fileID: -5210495998103079582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Thicc
   m_TagString: Cake
   m_Icon: {fileID: 0}

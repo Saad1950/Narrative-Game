@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213406873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftBoundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,9 +253,9 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -263,14 +263,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +397,19 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &545691431
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,8 +529,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24599993, y: 1.1175, z: 0}
-    m_Extent: {x: 3.1323, y: 4.6092, z: 0}
+    m_Center: {x: -0.25110006, y: 1.1187501, z: 0}
+    m_Extent: {x: 3.1283, y: 4.61235, z: 0}
   m_PointLightInnerAngle: 255.80319
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -595,7 +600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 822955293}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boundries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441261596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PhoneUpperEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879595875}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightBoundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,9 +1294,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 758841155637787553, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1086112154234202363, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
       propertyPath: m_Name
       value: Phone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086112154234202363, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536276617168460959, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666821664682219725, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8157396490353246046, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
       propertyPath: m_Color.b
@@ -1304,6 +1325,10 @@ PrefabInstance:
     - target: {fileID: 8157396490353246046, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336705357312736841, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8761802355116516091, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
       propertyPath: m_RootOrder
@@ -1348,6 +1373,10 @@ PrefabInstance:
     - target: {fileID: 8761802355116516091, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878480884150469007, guid: 006a03de042e9bc409eb39916972cc1e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

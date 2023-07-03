@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6065316347874298589}
   - component: {fileID: -3177260095464618679}
   - component: {fileID: -8314357646097402034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stubby
   m_TagString: Cake
   m_Icon: {fileID: 0}
