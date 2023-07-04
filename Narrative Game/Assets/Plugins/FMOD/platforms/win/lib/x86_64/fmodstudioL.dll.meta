@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: d8aa05dc37c4e2347be09fdb4ddf1536
 PluginImporter:
   externalObjects: {}
@@ -32,3 +33,6 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+guid: d8aa05dc37c4e2347be09fdb4ddf1536
+>>>>>>> Stashed changes

@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 8105cca2fc4eb2e488e010278c3ea1bf
 folderAsset: yes
 timeCreated: 1432606678
@@ -7,3 +8,6 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+guid: 8105cca2fc4eb2e488e010278c3ea1bf
+>>>>>>> Stashed changes
