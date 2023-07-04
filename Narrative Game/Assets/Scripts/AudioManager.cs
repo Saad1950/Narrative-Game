@@ -64,15 +64,14 @@ public class AudioManager : MonoBehaviour
 
 	void SwitchTracks(Scene scene)
 	{
-		switch (scene.buildIndex)
+		if(scene.buildIndex == 1)
 		{
-			case 1:
-				break;
-			case 2:
-				IntializeMusic(FMODEvents.instance.cakeStackingOST);
-				break;
-			case 3:
-				break;
+			IntializeMusic(FMODEvents.instance.castleTheme);
+		}
+
+		if(scene.buildIndex == 0)
+		{
+			musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 		}
 
 	}

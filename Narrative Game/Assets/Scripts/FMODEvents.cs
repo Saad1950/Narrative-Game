@@ -8,7 +8,7 @@ public class FMODEvents : MonoBehaviour
 	public static FMODEvents instance { get; private set; }
 
 	[field: Header("Music")]
-	[field: SerializeField] public EventReference cakeStackingOST { get; private set; }
+	[field: SerializeField] public EventReference castleTheme { get; private set; }
 
 
 	private void Awake()
