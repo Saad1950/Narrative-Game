@@ -5,17 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MinigameMessage : MonoBehaviour
 {
-	[SerializeField] private CustomScene[] customScenes;
-
+	MessageTracker messageTracker;
 	SpriteRenderer spriteRenderer;
-	int chosenValue;
+
+	private static int chosenValue;
+
+
+	CustomScene[] scenes;
 
 	bool canEnter;
 
 	private void Start()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		messageTracker = FindObjectOfType<MessageTracker>();
+		scenes = messageTracker.scenes;
 		spriteRenderer.color = Color.red;
+
+		
 	}
 
 	private void Update()
@@ -43,18 +50,10 @@ public class MinigameMessage : MonoBehaviour
 	void EnterMinigame()
 	{
 		MessageTracker.instance.SaveMessagesPos();
+		SceneManager.LoadScene(1);
 
-		int randomIndex = Random.Range(0, customScenes.Length);
-		chosenValue = randomIndex;
-
-		SceneManager.LoadScene(customScenes[randomIndex].buildIndex);
 
 	}
 }
 
-[System.Serializable]
-struct CustomScene
-{
-	public string name;
-	public int buildIndex;
-}
+

@@ -96,7 +96,6 @@ public class LinkPlayerMovement : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			print("Attacked");
 
 			if(hitInfo.collider != null && hitInfo.collider.CompareTag("Enemy"))
 				Destroy(hitInfo.collider.gameObject);

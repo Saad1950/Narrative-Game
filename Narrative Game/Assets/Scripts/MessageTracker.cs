@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MessageTracker : MonoBehaviour
-{ 
+{
+	public CustomScene[] scenes;
 
 	public static MessageTracker instance;
-	[SerializeField] private PhoneController phoneController;
-	[SerializeField] private Transform playerTransform;
+	private PhoneController phoneController;
+	private Transform playerTransform;
 	Vector2 savedPlayerPosition;
 
-	[SerializeField] Rigidbody2D[] messageRbs;
-	[SerializeField] List<Vector2> messagePositions = new List<Vector2>();
+	Rigidbody2D[] messageRbs;
+	List<Vector2> messagePositions = new List<Vector2>();
 
 
 	// called first
@@ -110,4 +111,10 @@ public class MessageTracker : MonoBehaviour
 	}
 
 
+}
+[System.Serializable]
+public struct CustomScene
+{
+	public string name;
+	public int buildIndex;
 }

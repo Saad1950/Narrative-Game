@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 
-		CheckForCake(scene);
+		SwitchTracks(scene);
 
 	}
 
@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
 	{
 		//Gets the current playback state
 		musicEventInstance.getPlaybackState(out currentPlaybackstate);
-		print(currentPlaybackstate);
+		//print(currentPlaybackstate);
 
 		musicBus.setVolume(musicVolume);
 
@@ -62,16 +62,19 @@ public class AudioManager : MonoBehaviour
 
 
 
-	void CheckForCake(Scene scene)
+	void SwitchTracks(Scene scene)
 	{
-		if(scene.buildIndex == 2)
+		switch (scene.buildIndex)
 		{
-			IntializeMusic(FMODEvents.instance.cakeStackingOST);
+			case 1:
+				break;
+			case 2:
+				IntializeMusic(FMODEvents.instance.cakeStackingOST);
+				break;
+			case 3:
+				break;
 		}
-		else
-		{
-			musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-		}
+
 	}
 
 	private void Awake()

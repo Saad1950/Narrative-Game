@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CakeStacking.unity
     guid: cc9677e038a02ff49bf5c59c32cab864
+  - enabled: 1
+    path: Assets/Scenes/LunkGame.unity
+    guid: 4ee486c02d605844587317612d8c101b
   m_configObjects: {}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Windows;
 
@@ -36,6 +37,14 @@ public class EnemyBehaviour : MonoBehaviour
 
 		RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction, maxAvoidanceDistance);
 		if(hitInfo.collider != null && hitInfo.collider.CompareTag("Obstacle"))
+		{
+			movesRightOrLeft = !movesRightOrLeft;
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.collider.CompareTag("Player"))
 		{
 			movesRightOrLeft = !movesRightOrLeft;
 		}
