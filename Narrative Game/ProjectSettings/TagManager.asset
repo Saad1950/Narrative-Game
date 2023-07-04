@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Cake
+  - WinBoundry
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,10 +15,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Cake
+  - Phone
+  - Enemy
+  - Player
   - 
   - 
   - 
