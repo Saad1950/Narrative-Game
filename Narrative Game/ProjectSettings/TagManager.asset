@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - Cake
   - WinBoundry
+  - Enemy
   layers:
   - Default
   - TransparentFX

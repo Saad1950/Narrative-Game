@@ -33,6 +33,13 @@ public class MinigameMessage : MonoBehaviour
 			canEnter = true;
 	}
 
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Player"))
+			canEnter = false;
+
+	}
+
 	void EnterMinigame()
 	{
 		MessageTracker.instance.SaveMessagesPos();
