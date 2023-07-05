@@ -66,7 +66,9 @@ public class AudioManager : MonoBehaviour
 	{
 		if(scene.buildIndex == 1)
 		{
-			IntializeMusic(FMODEvents.instance.castleTheme);
+			if(!currentPlaybackstate.Equals(PLAYBACK_STATE.PLAYING))
+				IntializeMusic(FMODEvents.instance.castleTheme);
+
 		}
 
 		if(scene.buildIndex == 0)
