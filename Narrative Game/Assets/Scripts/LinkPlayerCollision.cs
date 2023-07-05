@@ -34,10 +34,23 @@ public class LinkPlayerCollision : MonoBehaviour
 	{
 		if(collision.collider.CompareTag("Enemy") && !isDefending)
 		{
-			playerHealth--;
-			heartImages[playerHealth].texture = brokenHeartTexture;
-			
+
+			DecreaseHealth();
 		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.CompareTag("Enemy") && !isDefending)
+		{
+			DecreaseHealth();
+		}
+	}
+
+	void DecreaseHealth()
+	{
+		playerHealth--;
+		heartImages[playerHealth].texture = brokenHeartTexture;
 	}
 
 	private void Update()

@@ -17,7 +17,7 @@ public class MinigameMessage : MonoBehaviour
 
 	private void Start()
 	{
-		spriteRenderer = GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 		messageTracker = FindObjectOfType<MessageTracker>();
 		scenes = messageTracker.scenes;
 		spriteRenderer.color = Color.red;

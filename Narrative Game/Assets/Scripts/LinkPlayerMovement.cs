@@ -21,7 +21,7 @@ public class LinkPlayerMovement : MonoBehaviour
 	Rigidbody2D rb;
 	Vector2 input;
 	bool isGrounded;
-	bool isFacingRight;
+	bool isFacingRight = true;
 
 	// Start is called before the first frame update
 	void Start()
@@ -47,6 +47,7 @@ public class LinkPlayerMovement : MonoBehaviour
 
 		if ((input.x > 0f && !isFacingRight) || (input.x < 0 && isFacingRight))
 		{
+			print("flipped");
 			FlipSprite();
 		}
 
@@ -98,7 +99,13 @@ public class LinkPlayerMovement : MonoBehaviour
 		{
 
 			if(hitInfo.collider != null && hitInfo.collider.CompareTag("Enemy"))
-				Destroy(hitInfo.collider.gameObject);
+			{
+				if (hitInfo.collider.GetComponent<Health>() != null)
+				{
+					hitInfo.collider.GetComponent<Health>().numOfHearts--;
+				}
+			}
+
 		}
 
 	}
